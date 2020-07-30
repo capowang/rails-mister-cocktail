@@ -1,0 +1,5 @@
+<% for i in @cocktails %>
+<%= link_to i.name, cocktail_path(i.id) %>
+<% end %>
+<%= link_to "Create new Cocktail", new_cocktail_path %>
+

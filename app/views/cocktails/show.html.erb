@@ -1,0 +1,8 @@
+<%=@cocktail.name %>
+<% for i in @doses %>
+<%= i.description %>
+<%= i.ingredient.name %> 
+<%= link_to 'delete', dose_path(i.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+<%= link_to 'create', new_cocktail_dose_path(@cocktail.id) %>
+<%= link_to"Back to main", cocktails_path  %> 
