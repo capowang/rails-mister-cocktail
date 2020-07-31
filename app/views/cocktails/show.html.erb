@@ -1,8 +1,20 @@
-<%=@cocktail.name %>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+<div class="white btn btn-flat">
+  <%=@cocktail.name%>
+</div>
+</div>
+
+
 <% for i in @doses %>
-<%= i.description %>
-<%= i.ingredient.name %> 
-<%= link_to 'delete', dose_path(i.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+<div class="card-product">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-infos">
+    <h2 class="btn btn-gradient"><%=i.description%></h2>
+    <p class="btn btn-gradient"><%= i.ingredient.name %></p>
+  </div>
+</div>
+<%= link_to 'delete', dose_path(i.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-flat" %>
 <% end %>
-<%= link_to 'create', new_cocktail_dose_path(@cocktail.id) %>
-<%= link_to"Back to main", cocktails_path  %> 
+
+<%= link_to 'create', new_cocktail_dose_path(@cocktail.id), class: "btn btn-flat" %>
+<%= link_to"Back to main", cocktails_path, class: "btn btn-flat"  %> 
